@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>My This is the HTML Part</h1>
+    <p>
+      Put any HTML code here (Buttons, Sliders, Links) The script type will run
+      when the page loads or when you add triggers to run that script sk
+    </p>
+
+    <!-- 
+    <form>
+      Keyword:<br />
+      <input type="text" name="keyword" onkeyup="callREST()" /><br />
+    </form>
+    <div id="response"></div>
+    <form action="http://127.0.0.1:8081/process_get" method="GET">
+      First Name: <input type="text" name="first_name" /> <br />
+      Last Name: <input type="text" name="last_name" /> //
+      <input type="submit" value="Submit" />
+    </form> -->
+    <!-- <script>
+      const apiUrl = "http://127.0.0.1:8081/listalldata";
+      fetch(apiUrl, { mode: "no-cors" })
+        .then(function (response) {
+          console.log("Hello\n");
+          console.log(response);
+          console.log("bye\n");
+        })
+
+        .catch(function (error) {
+          console.log("Request failed", error);
+        });
+    </script> -->
+
+    <script>
+      //   const apiUrl = "http://127.0.0.1:8081/listalldata";
+      //   fetch(apiUrl, { method: "POST", mode: "no-cors" }).then((data) =>
+      //     console.log("This is your data", data)
+      //   );
+
+      postData("http://127.0.0.1:8081/listalldata").then((data) => {
+        console.log(data); // JSON data parsed by `data.json()` call
+      });
+    </script>
+  </body>
+</html>

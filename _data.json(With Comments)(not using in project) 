@@ -1,0 +1,38 @@
+// Conrad Ptasznik 
+// data.json file 
+// A JSON based database for our server 
+// Its the same data.json but with commnets since json doesnt allow comments 
+// This is a simple database for a store 
+
+{
+  "item1": {
+    "category ": "Shoes",
+    "name": "SB Charge Skate Shoes",
+    "Brand": "Nike",
+    "id": 1
+  },
+
+  "item2": {
+    "category": "Books",
+    "name": "Effective Java ",
+    "Brand": "Addison-Wesley Professional",
+    "id": 2
+  },
+
+  "item3": {
+    "category ": "Toys",
+    "name": "Moon Shoes",
+    "Brand": "Big Time Toys",
+    "id": 3
+  }
+}
+
+//Think of this database like a linklist and each index hold an object 
+
+"item3" : {                 //  <-------| This can be accessed like an array like  data[item3]  you can use this to loop through the data
+      "category ": "Toys",  //  <-------|  item3.name to access this data entry
+      "name": "Moon Shoes",
+      "Brand": "Big Time Toys",
+      "id": 3               //  <-------| This is a primary key, all entrys must have a unique key
+   }  
+

@@ -7,40 +7,17 @@
       when the page loads or when you add triggers to run that script sk
     </p>
 
-    <!-- 
-    <form>
-      Keyword:<br />
-      <input type="text" name="keyword" onkeyup="callREST()" /><br />
-    </form>
-    <div id="response"></div>
-    <form action="http://127.0.0.1:8081/process_get" method="GET">
-      First Name: <input type="text" name="first_name" /> <br />
-      Last Name: <input type="text" name="last_name" /> //
-      <input type="submit" value="Submit" />
-    </form> -->
-    <!-- <script>
-      const apiUrl = "http://127.0.0.1:8081/listalldata";
-      fetch(apiUrl, { mode: "no-cors" })
-        .then(function (response) {
-          console.log("Hello\n");
-          console.log(response);
-          console.log("bye\n");
-        })
-
-        .catch(function (error) {
-          console.log("Request failed", error);
-        });
-    </script> -->
-
     <script>
-      //   const apiUrl = "http://127.0.0.1:8081/listalldata";
-      //   fetch(apiUrl, { method: "POST", mode: "no-cors" }).then((data) =>
-      //     console.log("This is your data", data)
-      //   );
-
-      postData("http://127.0.0.1:8081/listalldata").then((data) => {
-        console.log(data); // JSON data parsed by `data.json()` call
-      });
+      //In this example, this script runs when the page is loaded in the browser.
+      //When the page loads, press the F12 key to access the console (Google Chrome)
+      const apiUrl = "http://127.0.0.1:8081/listalldata"; //The URL of the server request
+      //This is a string so your code should create different URL via with strings
+      fetch(apiUrl, {
+        method: "GET", //This should match the method type in the server.js
+        Origin: "http://localhost:3000",
+      })
+        .then((response) => response.json()) //grab the body of the server request and convert to Json
+        .then((data) => console.log("This is your data", data)); //show the response in the console log
     </script>
   </body>
 </html>

@@ -7,6 +7,13 @@ const bodyParser = require("body-parser");
 var app = express();
 var fs = require("fs");
 
+//--------------------------------------------------------
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 //------------THREE HTTP GET EXAMPLES--------------------//
 
 //EX 1
@@ -57,7 +64,6 @@ app.get("/name/:id", function (req, res) {
 
 //-----------------HTTP POST EXAMPLE-------------------//
 //Post example wont just work with the link alone you need to send the method used in the HTML project
-
 var user = {
   data4: {
     name: "Conrad",

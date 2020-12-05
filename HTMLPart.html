@@ -4,13 +4,34 @@
     <h1>My This is the HTML Part</h1>
     <p>
       Put any HTML code here (Buttons, Sliders, Links) The script type will run
-      when the page loads or when you add triggers to run that script sk
+      when the page loads or when you add triggers to run that script
     </p>
+
+    <script type="text/javascript">
+      //This code will run when the page is loaded
+
+      var apiUrl = "http://localhost:8081/addUser";
+      const options = { method: "POST" };
+      fetch(apiUrl, options)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          // Work with JSON data here
+          console.log(
+            "Heres what's on data that was pulled from the server from /addUser\n",
+            data
+          );
+        })
+        .catch((err) => {
+          // Do something for an error here
+        });
+    </script>
 
     <script>
       //In this example, this script runs when the page is loaded in the browser.
       //When the page loads, press the F12 key to access the console (Google Chrome)
-      const apiUrl = "http://127.0.0.1:8081/listalldata"; //The URL of the server request
+      apiUrl = "http://127.0.0.1:8081/listalldata"; //The URL of the server request
       //This is a string so your code should create different URL via with strings
       fetch(apiUrl, {
         method: "GET", //This should match the method type in the server.js
@@ -19,5 +40,21 @@
         .then((response) => response.json()) //grab the body of the server request and convert to Json
         .then((data) => console.log("This is your data", data)); //show the response in the console log
     </script>
+
+<script>
+      apiUrl = "http://127.0.0.1:8081/listalldata"; //The URL of the server request
+      //This is a string so your code should create different URL via with strings
+      fetch(apiUrl, {
+        method: "GET", //This should match the method type in the server.js
+        Origin: "http://localhost:3000",
+      })
+        .then((response) => response.json()) //grab the body of the server request and convert to Json
+        .then((data) => name = data.data1.name ) 
+        .then((data) => console.log("This is your data", data)); //show the response in the console log
+</script>
+
+    <div id = "output"> Nothing Yet</div>
+  </div>
+  <script src="fun.js"></script>
   </body>
 </html>

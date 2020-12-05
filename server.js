@@ -65,7 +65,7 @@ app.get("/name/:id", function (req, res) {
 //-----------------HTTP POST EXAMPLE-------------------//
 //Post example wont just work with the link alone you need to send the method used in the HTML project
 var user = {
-  data4: {
+  data5: {
     name: "Conrad",
     password: ";)",
     profession: "Bum",
@@ -77,7 +77,7 @@ app.post("/addUser", function (req, res) {
   // First read existing users.
   fs.readFile(__dirname + "/" + "data.json", "utf8", function (err, data) {
     data = JSON.parse(data);
-    data["data4"] = user["data4"]; //Set the new pointer to the end of the json list and input data4
+    data["data5"] = user["data5"]; //Set the new pointer to the end of the json list and input data4
     console.log(data);
     let data2 = JSON.stringify(data);
     console.log(data2);

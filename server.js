@@ -69,7 +69,7 @@ var user = {
     name: "Conrad",
     password: ";)",
     profession: "Bum",
-    id: 4,
+    id: 5,
   },
 };
 
@@ -88,7 +88,7 @@ app.post("/addUser", function (req, res) {
 });
 
 //------------------Send thing over--------------------//
-
+//Work in progress 
 app.get("/process_get", function (req, res) {
   // Prepare output in JSON format
   response = {

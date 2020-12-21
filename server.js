@@ -87,6 +87,21 @@ app.post("/addUser", function (req, res) {
   });
 });
 
+
+app.post("/addUsers", function (req, res) {
+  // First read existing users.
+  fs.readFile(__dirname + "/" + "data.json", "utf8", function (err, data) {
+    data = JSON.parse(data);
+    data["data5"] = user["data5"]; //Set the new pointer to the end of the json list and input data4
+    console.log(data);
+    let data2 = JSON.stringify(data);
+    console.log(data2);
+    fs.writeFileSync(__dirname + "/" + "data.json", data2);
+    res.end(JSON.stringify(data));
+  });
+});
+
+
 //------------------Send thing over--------------------//
 //Work in progress 
 app.get("/process_get", function (req, res) {

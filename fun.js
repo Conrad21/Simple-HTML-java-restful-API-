@@ -5,8 +5,8 @@ fetch(apiUrl, {
   Origin: "http://localhost:3000",
 })
   .then((response) => response.json()) //grab the body of the server request and convert to Json
-  .then((data) => name = data.data1.name) 
+  .then((data) => name = data.data1.name)   //data.name should print out the name from data1
   .then((data) => console.log("This is your data", data)); //show the response in the console log
   console.log("This right here", name); 
-var output = document.getElementById('output'); 
+var output = document.getElementById('output');      //set the var to what was call "output" in the HTML part 
 output.innerHTML = name;

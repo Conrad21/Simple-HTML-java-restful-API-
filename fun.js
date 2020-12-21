@@ -10,3 +10,5 @@ fetch(apiUrl, {
   console.log("This right here", name); 
 var output = document.getElementById('output');      //set the var to what was call "output" in the HTML part 
 output.innerHTML = name;
+
+console.log("This is the output:" , output) ; 
